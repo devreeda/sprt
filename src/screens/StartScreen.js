@@ -30,7 +30,7 @@ export default class StartScreen extends Component {
               <Text style={presentation_text}>Millions are using Workout for Women to help</Text>
               <Text style={presentation_text}>them make fitness a daily habit.</Text>
               <Text style={[presentation_text, {paddingTop: height*0.02}]}>Are you ready to start your fitness journey ?</Text>
-              <ButtonPink text="LET'S GET STARTED" navigate={() => this.props.navigation.navigate("Home")}/>
+              <ButtonPink text="LET'S GET STARTED" navigate={() => this.props.navigation.navigate("TabNav")}/>
             </View>
           </View>
         </ImageBackground>
