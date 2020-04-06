@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, SafeAreaView, FlatList, TextInput, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, SafeAreaView, TextInput, StyleSheet, Dimensions, FlatList } from 'react-native';
 import Icon from 'react-native-vector-icons/EvilIcons'
 import CategorieItem from '../components/CategorieItem'
+import WorkoutItem from '../components/WorkoutItem'
 
 const {width, height} = Dimensions.get('window')
 
@@ -15,8 +16,39 @@ export default class WorkoutsScreen extends Component {
         {name: 'My favorites'},
         {name: 'Popular'},
         {name: '7 Minute'},
+        {name: 'Beginner'},
+        {name: 'Fat loss'},
       ],
-      data: [{'key': 'a'}, {'key': 'b'}]
+      workoutItems: [
+        {
+          name: '10M ABS',
+          level: 'Intermediate',
+          time: 10,
+          calories: 49,
+          imageBackground: require('../images/abs2.jpg')
+        },
+        {
+          name: '10M BUTT',
+          level: 'Beginner',
+          time: 10,
+          calories: 42,
+          imageBackground: require('../images/squats.jpg')
+        },
+        {
+          name: '10M LEGS',
+          level: 'Beginner',
+          time: 10,
+          calories: 34,
+          imageBackground: require('../images/abs1.jpg')
+        },
+        {
+          name: '10M ABS',
+          level: 'Intermediate',
+          time: 10,
+          calories: 49,
+          imageBackground: require('../images/abs2.jpg')
+        },
+      ]
     }
   }
 
@@ -43,20 +75,23 @@ export default class WorkoutsScreen extends Component {
           <View style={categorie_list_container}>
             <FlatList 
               data={this.state.categories}
-              renderItem={(data) => <CategorieItem item={data.item}/>}
+              renderItem={(data) => <CategorieItem item={data.item} id={data.index} length={this.state.categories.length}/>}
               contentContainerStyle={categorie_list}
               keyExtractor={(item, key) => key.toString()}
               horizontal
-              showsHorizontalScrollIndicator={false}
+
               ItemSeparatorComponent={() => <Text>   </Text>}
+              horizontal
             />
           </View>
         </View>
         <View style={list_container}>
           <FlatList 
-            data={this.state.data}
-            renderItem={(data) => <Text>{data.item.key}</Text>}
+            data={this.state.workoutItems}
+            renderItem={(data) => <WorkoutItem item={data.item}/>}
             contentContainerStyle={list}
+            keyExtractor={(item, key) => key.toString()}
+            showsVerticalScrollIndicator={false}
           />
         </View>
       </SafeAreaView>
@@ -90,10 +125,10 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   categorie_list_container: {
-    flex: 1
+    flex: 1,
+    paddingLeft: 5,
   }, 
   categorie_list: {
-    width: width,
     alignItems: 'center',
   },
   list_container: {

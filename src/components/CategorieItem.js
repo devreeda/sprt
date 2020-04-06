@@ -12,6 +12,7 @@ export default class CategorieItem extends Component {
             main_container,
             text,
         } = styles
+        console.log(this.props.id)
         return (
             <TouchableOpacity style={main_container}>
                 <Text style={text}>{item.name}</Text>
@@ -25,12 +26,12 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        minWidth: '15%',
         height: height*0.04,
         borderRadius: 6,
+        minWidth: width*0.13,
     },
     text: {
-        paddingLeft: '3%',
-        paddingRight: '3%',
+        marginRight: width*0.02,
+        marginLeft: width*0.02,        
     }
 })
