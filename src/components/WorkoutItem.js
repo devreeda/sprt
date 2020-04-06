@@ -7,6 +7,7 @@ export default class WorkoutItem extends Component {
     render() {
         const {
             item,
+            navigation
         } = this.props
         const {
             main_container,
@@ -17,7 +18,10 @@ export default class WorkoutItem extends Component {
             sub_text
         } = styles
         return (
-            <TouchableOpacity style={main_container}>
+            <TouchableOpacity style={main_container} 
+            onPress={() => navigation.navigate("SingleWorkout", {
+                item
+            })}>
                 <ImageBackground source={item.imageBackground} style={background_image}
                 imageStyle={{borderRadius: 5}}>
                     <View style={content_container}>

@@ -48,6 +48,34 @@ export default class WorkoutsScreen extends Component {
           calories: 49,
           imageBackground: require('../images/abs2.jpg')
         },
+        {
+          name: '10M ABS',
+          level: 'Intermediate',
+          time: 10,
+          calories: 49,
+          imageBackground: require('../images/abs2.jpg')
+        },
+        {
+          name: '10M BUTT',
+          level: 'Beginner',
+          time: 10,
+          calories: 42,
+          imageBackground: require('../images/squats.jpg')
+        },
+        {
+          name: '10M LEGS',
+          level: 'Beginner',
+          time: 10,
+          calories: 34,
+          imageBackground: require('../images/abs1.jpg')
+        },
+        {
+          name: '10M ABS',
+          level: 'Intermediate',
+          time: 10,
+          calories: 49,
+          imageBackground: require('../images/abs2.jpg')
+        },
       ]
     }
   }
@@ -79,7 +107,7 @@ export default class WorkoutsScreen extends Component {
               contentContainerStyle={categorie_list}
               keyExtractor={(item, key) => key.toString()}
               horizontal
-
+              showsHorizontalScrollIndicator={false}
               ItemSeparatorComponent={() => <Text>   </Text>}
               horizontal
             />
@@ -88,7 +116,7 @@ export default class WorkoutsScreen extends Component {
         <View style={list_container}>
           <FlatList 
             data={this.state.workoutItems}
-            renderItem={(data) => <WorkoutItem item={data.item}/>}
+            renderItem={(data) => <WorkoutItem item={data.item} navigation={this.props.navigation}/>}
             contentContainerStyle={list}
             keyExtractor={(item, key) => key.toString()}
             showsVerticalScrollIndicator={false}
