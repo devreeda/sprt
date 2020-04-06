@@ -10,7 +10,7 @@ import IconFA5 from 'react-native-vector-icons/FontAwesome5'
 import IconAD from 'react-native-vector-icons/AntDesign'
 import IconF from 'react-native-vector-icons/Feather'
 import IconSLI from 'react-native-vector-icons/SimpleLineIcons'
-import {Dimensions} from 'react-native'
+import {Dimensions, Text} from 'react-native'
 
 const {width, height} = Dimensions.get('window')
 
@@ -24,43 +24,44 @@ export default function TabNav() {
       },
       labelStyle: {
         fontSize: height*0.015,
-        color: '#444',
         fontWeight: '500'
-      }
+      },
+      activeTintColor: 'rgb(255, 0, 110)',
+      inactiveTintColor: 'black'
     }}>
       <Tab.Screen name="TODAY" component={TodayScreen} 
         options={{
-          tabBarIcon: () => (
-          <IconF name="clipboard" size={height*0.045} color="#444" />
+          tabBarIcon: ({ focused, color, size}) => (
+          <IconF name="clipboard" size={height*0.045} color={color} />
         )}
         }
       />
       <Tab.Screen name="WORKOUTS" component={WorkoutsScreen} 
         options={{
-          tabBarIcon: () => (
-          <IconFA5 name="dumbbell" size={height*0.04} color="#444" />
+          tabBarIcon: ({ focused, color, size}) => (
+          <IconFA5 name="dumbbell" size={height*0.04} color={color} />
         )}
         }
       />
       <Tab.Screen name="PROGRAMS" component={ProgramsScreen} 
         options={{
-          tabBarIcon: () => (
-          <IconAD name="filetext1" size={height*0.04} color="#444" />
+          tabBarIcon: ({ focused, color, size}) => (
+          <IconAD name="filetext1" size={height*0.04} color={color} />
         )}
         }
       />
       
       <Tab.Screen name="PROGRESS" component={ProgressScreen} 
         options={{
-          tabBarIcon: () => (
-          <IconSLI name="chart" size={height*0.04} color="#444" />
+          tabBarIcon: ({ focused, color, size}) => (
+          <IconSLI name="chart" size={height*0.04} color={color} />
         )}
         }
       />
       <Tab.Screen name="SETTINGS" component={SettingsScreen} 
         options={{
-          tabBarIcon: () => (
-          <IconF name="settings" size={height*0.04} color="#444" />
+          tabBarIcon: ({ focused, color, size}) => (
+          <IconF name="settings" size={height*0.04} color={color} />
         )}
         }
       />
