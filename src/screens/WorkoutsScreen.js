@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, SafeAreaView, FlatList, TextInput, StyleSheet, Dimensions } from 'react-native';
 import Icon from 'react-native-vector-icons/EvilIcons'
+import CategorieItem from '../components/CategorieItem'
 
 const {width, height} = Dimensions.get('window')
 
@@ -8,10 +9,17 @@ export default class WorkoutsScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      categories: [
+        {name: 'Recent'},
+        {name: 'All'},
+        {name: 'My favorites'},
+        {name: 'Popular'},
+        {name: '7 Minute'},
+      ],
       data: [{'key': 'a'}, {'key': 'b'}]
     }
   }
-  
+
   render() {
     const {
       main_container,
@@ -34,9 +42,13 @@ export default class WorkoutsScreen extends Component {
           </View>
           <View style={categorie_list_container}>
             <FlatList 
-              data={this.state.data}
-              renderItem={(data) => <Text>{data.item.key}</Text>}
+              data={this.state.categories}
+              renderItem={(data) => <CategorieItem item={data.item}/>}
               contentContainerStyle={categorie_list}
+              keyExtractor={(item, key) => key.toString()}
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              ItemSeparatorComponent={() => <Text>   </Text>}
             />
           </View>
         </View>
@@ -58,7 +70,6 @@ const styles = StyleSheet.create({
   },
   up_container: {
     flex: 1,
-    borderWidth: 1,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 5,
@@ -82,11 +93,11 @@ const styles = StyleSheet.create({
     flex: 1
   }, 
   categorie_list: {
-
+    width: width,
+    alignItems: 'center',
   },
   list_container: {
     flex: 5,
-    borderWidth: 1
   },
   list: {
 
