@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, ImageBackground, StyleSheet, Image, Dimensions } from 'react-native';
 import ButtonPink from '../components/ButtonPink'
-import Icon from 'react-native-vector-icons/FontAwesome';
-const myIcon = <Icon name="rocket" size={30} color="#900" />;
 
 const {width, height} = Dimensions.get('window')
 
