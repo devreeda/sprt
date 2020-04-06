@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, ImageBackground, StyleSheet, Dimensions } from 'react-native';
+import HeaderToday from '../components/HeaderToday'
 
 const {width, height} = Dimensions.get('window')
 
@@ -20,6 +21,7 @@ export default class TodayScreen extends Component {
       <View style={main_container}>
         <ImageBackground style={image_background} source={require('../images/hills.jpg')}>
           <View style={content_container}>
+          <HeaderToday />
             <View style={up_container}>
               <Text style={quote_text}>The future belongs to those who believe in the beauty of their dreams.</Text>
               <View style={author_container}>
@@ -49,7 +51,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255,255,255,0.6)'
   },
   up_container: {
-    flex: 4,
+    flex: 3,
     justifyContent: "center",
     padding: width*0.05
   },

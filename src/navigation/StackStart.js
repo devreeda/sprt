@@ -20,9 +20,7 @@ class StackStart extends React.Component {
                 <Stack.Screen name="TabNav" component={TabNav}
                     options={{
                         gestureEnabled: false,
-                        header: () =>  (
-                            <HeaderToday />
-                        )
+                        headerShown: false,
                     }}
                 />
             </Stack.Navigator>
