@@ -25,56 +25,64 @@ export default class WorkoutsScreen extends Component {
           level: 'Intermediate',
           time: 10,
           calories: 49,
-          imageBackground: require('../images/abs2.jpg')
+          imageBackground: require('../images/abs2.jpg'),
+          description: 'Rock-hard abs always need to start from somewhere and this ab workout is as good a place as any.'
         },
         {
           name: '10M BUTT',
           level: 'Beginner',
           time: 10,
           calories: 42,
-          imageBackground: require('../images/squats.jpg')
+          imageBackground: require('../images/squats.jpg'),
+          description: 'Rock-hard abs always need to start from somewhere and this ab workout is as good a place as any.'
         },
         {
           name: '10M LEGS',
           level: 'Beginner',
           time: 10,
           calories: 34,
-          imageBackground: require('../images/abs1.jpg')
+          imageBackground: require('../images/abs1.jpg'),
+          description: 'Rock-hard abs always need to start from somewhere and this ab workout is as good a place as any.'
         },
         {
           name: '10M ABS',
           level: 'Intermediate',
           time: 10,
           calories: 49,
-          imageBackground: require('../images/abs2.jpg')
+          imageBackground: require('../images/abs2.jpg'),
+          description: 'Rock-hard abs always need to start from somewhere and this ab workout is as good a place as any.'
         },
         {
           name: '10M ABS',
           level: 'Intermediate',
           time: 10,
           calories: 49,
-          imageBackground: require('../images/abs2.jpg')
+          imageBackground: require('../images/abs2.jpg'),
+          description: 'Rock-hard abs always need to start from somewhere and this ab workout is as good a place as any.'
         },
         {
           name: '10M BUTT',
           level: 'Beginner',
           time: 10,
           calories: 42,
-          imageBackground: require('../images/squats.jpg')
+          imageBackground: require('../images/squats.jpg'),
+          description: 'Rock-hard abs always need to start from somewhere and this ab workout is as good a place as any.'
         },
         {
           name: '10M LEGS',
           level: 'Beginner',
           time: 10,
           calories: 34,
-          imageBackground: require('../images/abs1.jpg')
+          imageBackground: require('../images/abs1.jpg'),
+          description: 'Rock-hard abs always need to start from somewhere and this ab workout is as good a place as any.'
         },
         {
           name: '10M ABS',
           level: 'Intermediate',
           time: 10,
           calories: 49,
-          imageBackground: require('../images/abs2.jpg')
+          imageBackground: require('../images/abs2.jpg'),
+          description: 'Rock-hard abs always need to start from somewhere and this ab workout is as good a place as any.'
         },
       ]
     }

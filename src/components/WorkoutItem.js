@@ -19,9 +19,7 @@ export default class WorkoutItem extends Component {
         } = styles
         return (
             <TouchableOpacity style={main_container} 
-            onPress={() => navigation.navigate("SingleWorkout", {
-                item
-            })}>
+            onPress={() => navigation.navigate("SingleWorkout", {item})}>
                 <ImageBackground source={item.imageBackground} style={background_image}
                 imageStyle={{borderRadius: 5}}>
                     <View style={content_container}>

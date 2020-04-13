@@ -25,10 +25,15 @@ class StackStart extends React.Component {
                     }}
                 />
                 <Stack.Screen name="Workouts" component={WorkoutsScreen}
-
+                    options={{
+                        headerShown: false,
+                    }}
                 />
                 <Stack.Screen name="SingleWorkout" component={SingleWorkoutScreen}
-
+                    options={{
+                        //headerTransparent: true,
+                        headerShown: false,
+                    }}
                 />
             </Stack.Navigator>
           );
